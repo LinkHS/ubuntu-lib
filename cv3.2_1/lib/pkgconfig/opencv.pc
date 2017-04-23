@@ -1,6 +1,6 @@
 # Package Information for pkg-config
 
-prefix=/home/austin/lib/cv3.2_default
+prefix=/home/austin/lib/cv3.2_1
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir_old=${prefix}/include/opencv

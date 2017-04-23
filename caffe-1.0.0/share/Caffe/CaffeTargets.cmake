@@ -47,8 +47,8 @@ get_filename_component(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
 add_library(caffe SHARED IMPORTED)
 
 set_target_properties(caffe PROPERTIES
-  INTERFACE_COMPILE_DEFINITIONS "USE_LMDB;USE_LEVELDB;CPU_ONLY"
-  INTERFACE_INCLUDE_DIRECTORIES "/usr/include;/home/austin/tools/include;/home/austin/lib/gflags-2.2.0/include;/home/austin/lib/protobuf-3.2.0/include;/usr/include/hdf5/serial;/home/austin/lib/lmdb-0.9.9/include;/home/austin/lib/leveldb-1.9/include;/usr/include;/usr/include;${_IMPORT_PREFIX}/include"
+  INTERFACE_COMPILE_DEFINITIONS "USE_LMDB;USE_LEVELDB;CPU_ONLY;USE_OPENCV"
+  INTERFACE_INCLUDE_DIRECTORIES "/usr/include;/home/austin/tools/include;/home/austin/lib/gflags-2.2.0/include;/home/austin/lib/protobuf-3.2.0/include;/usr/include/hdf5/serial;/home/austin/lib/lmdb-0.9.9/include;/home/austin/lib/leveldb-1.9/include;/home/austin/lib/cv3.2_1/include/opencv;/home/austin/lib/cv3.2_1/include;/usr/include;/usr/include;${_IMPORT_PREFIX}/include"
 )
 
 # Create imported target proto

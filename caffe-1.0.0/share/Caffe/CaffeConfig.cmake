@@ -19,9 +19,9 @@
 
 # OpenCV dependency (optional)
 
-if(OFF)
+if(ON)
   if(NOT OpenCV_FOUND)
-    set(Caffe_OpenCV_CONFIG_PATH "")
+    set(Caffe_OpenCV_CONFIG_PATH "/home/austin/lib/cv3.2_1/lib/pkgconfig")
     if(Caffe_OpenCV_CONFIG_PATH)
       get_filename_component(Caffe_OpenCV_CONFIG_PATH ${Caffe_OpenCV_CONFIG_PATH} ABSOLUTE)
 
