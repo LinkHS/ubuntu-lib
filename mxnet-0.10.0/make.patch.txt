@@ -1,0 +1,42 @@
+diff --git a/Makefile b/Makefile
+index f9b6bb6..2e258f5 100644
+--- a/Makefile
++++ b/Makefile
+@@ -73,8 +73,10 @@ endif
+ 
+ # setup opencv
+ ifeq ($(USE_OPENCV), 1)
+-	CFLAGS += -DMXNET_USE_OPENCV=1 $(shell pkg-config --cflags opencv)
+-	LDFLAGS += $(filter-out -lopencv_ts, $(shell pkg-config --libs opencv))
++        CFLAGS += -DMXNET_USE_OPENCV=1
++        LDFLAGS += -lopencv_world
++	#CFLAGS += -DMXNET_USE_OPENCV=1 $(shell pkg-config --cflags opencv)
++	#LDFLAGS += $(filter-out -lopencv_ts, $(shell pkg-config --libs opencv))
+ 	BIN += bin/im2rec
+ else
+ 	CFLAGS+= -DMXNET_USE_OPENCV=0
+diff --git a/cub b/cub
+index 89de7ab..80dbf02 160000
+--- a/cub
++++ b/cub
+@@ -1 +1 @@
+-Subproject commit 89de7ab20167909bc2c4f8acd397671c47cf3c0d
++Subproject commit 80dbf02aa36d9ef881629e2ee2c15415ba07cef5
+diff --git a/make/config.mk b/make/config.mk
+index 7a98d94..1ef359f 100644
+--- a/make/config.mk
++++ b/make/config.mk
+@@ -34,10 +34,11 @@ DEBUG = 0
+ USE_PROFILER =
+ 
+ # the additional link flags you want to add
+-ADD_LDFLAGS =
++ADD_LDFLAGS = -L/home/dawei.yang/work/ubuntu-lib/cv3.2_1/lib
+ 
+ # the additional compile flags you want to add
+-ADD_CFLAGS =
++ADD_CFLAGS = -I/home/dawei.yang/work/ubuntu-lib/cv3.2_1/include
++
+ 
+ #---------------------------------------------
+ # matrix computation libraries for CPU/GPU
