@@ -120,6 +120,11 @@ int AlphaDetImpl::detect(int img_w, int img_h, int img_step, char *img, std::vec
         printf("\n");
         faces_results.push_back(faces_result);
     }
+
+    m_raw_resp_list.clear();
+    m_merged_resp_list.clear();
+    m_raw_resp_list.resize(m_models.size());
+    m_merged_resp_list.resize(m_raw_resp_list.size());
 }
 
 
